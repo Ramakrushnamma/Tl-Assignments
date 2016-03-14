@@ -1,0 +1,26 @@
+<!Doctype html>
+<html>
+<body>
+Select some of the text::<input type="text" value="Hello world" //onselect="myFunction()" id="myText" >	
+
+<p id="demo"></p>
+<button type="button" onclick="mySelectFunction()">select</button>
+<script type="text/javascript">
+	function myFunction()
+	{
+
+		//alert("u hv Selected some thing");
+		document.getElementById("demo").innerHTML="u hv selected some thing";
+
+
+
+	}
+	function mySelectFunction()
+	{
+		document.getElementById("myText").select();
+	}
+
+
+</script>
+</body>
+</html>
