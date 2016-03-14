@@ -1,0 +1,103 @@
+<!Doctype html>
+
+<html>
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>Arithmetic operations</h1>
+Number1:<input type="number" id="num1">
+Number2:<input type="number" id="num2">
+Result:<input type="number" id="resultq"><br><br><br>
+<div class="btn-group">
+<input type="button" class="btn btn-primary" onclick="addition()" value="add">
+<input type="button"  class="btn btn-primary"onclick="Substraction()" value="sub">
+<input type="button"  class="btn btn-primary" onclick="multiplication()" value="mul">
+<input type="button"  class="btn btn-primary" onclick="division()" value="divs">
+</div>
+<script type="text/javascript">
+
+function addition() {
+	console.log("addition function called...");
+	var n1 = parseInt(document.getElementById('num1').value);
+	var n2 = parseInt(document.getElementById('num2').value);
+	
+
+	if(isNaN(n1)||isNaN(n2))
+	{
+
+		alert("plz enter number");
+	}
+	
+	else
+	{
+		var result=n1 + n2;
+		document.getElementById("resultq").value = result;
+	}
+	
+	
+}
+
+function Substraction()
+{
+	var n1 = parseInt(document.getElementById('num1').value);
+	var n2 = parseInt(document.getElementById('num2').value);
+	
+
+	if(isNaN(n1)||isNaN(n2))
+	{
+
+		alert("plz enter number");
+	}
+	else
+	{
+		var result=n1-n2;
+		document.getElementById("resultq").value = result;
+	}
+}
+function multiplication()
+{
+	console.log("multiplication function called...");
+	var n1 = parseInt(document.getElementById('num1').value);
+	var n2 = parseInt(document.getElementById('num2').value);
+	if(isNaN(n1)||isNaN(n2))
+	{
+
+		alert("plz enter number");
+	}
+	else
+	{
+		var result=n1*n2;
+		document.getElementById("resultq").value = result;
+	}
+}
+function division()
+{
+	console.log("division function called...");
+	var n1 = parseInt(document.getElementById('num1').value);
+	var n2 = parseInt(document.getElementById('num2').value);
+	if(isNaN(n1)|| isNaN(n2))
+	{
+
+		alert("plz enter two numbers to do any operation ");
+	}
+	else if(n2==0)
+	{
+		alert("any number will not be divided by 0 ");
+	}
+	else
+	{
+		var result=n1/n2;
+		document.getElementById("resultq").value = result;   
+	}
+}
+</script>
+</body
+
+</html>

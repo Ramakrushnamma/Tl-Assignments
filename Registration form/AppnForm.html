@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Application</title>
+	<style>
+	
+	.cont{
+		width: 45%;
+		margin:0px auto;
+		text-align: justify;
+	}
+	.send{
+text-align: center;
+
+}
+tr
+{
+    line-height:30px;
+}
+
+#tenthtwel
+	{
+	input-type="hidden";
+	display :none;
+
+	}
+
+	#graduation{
+		input-type="hidden";
+		display: none;
+	}
+	#Postgraduation
+	{
+		input-type="hidden";
+		display: none;
+	}
+	#Stateboard
+	{
+
+		input-type="hidden";
+		display: none;
+	}
+	#branches
+	{
+
+		input-type="hidden";
+		display: none;
+	}
+	</style>
+
+</head>
+<body>
+<div class="cont">
+<form>
+<h1>Registration Form</h1>
+<fieldset>
+
+<legend>Personal Information</legend>
+<table align="center">
+	<tr>
+		<td>FirstName:</td><td><input type="text" name="firstname" class ="fn" onfocus="myFunction(0)" onblur="function1(0)" oninput="changing(0)" title="Enter your FirstName"></td>	<td><p style="color:red" class ="demo"></p></td>
+	</tr>
+		<tr>
+		<td>LastName:</td><td><input type="text" name="lastname" class ="fn" onfocus="myFunction(1)" onblur="function1(1)"  oninput="changing(1)" title="Enter your LastName"></td><td><p style="color:red" class ="demo"></p></td>
+	</tr>
+	<tr >
+		<td>Gender:</td><td ><input style="display:inline;" type="radio" name="gender" value="male"  />Male
+	
+		<input style="display:inline;" type="radio" name="gender" value="female" />Female
+	
+		<input type="radio" name="gender" value="other" />Other</td>
+	</tr>
+	
+	<tr>
+		<td>Email:</td><td><input type="email" name="email" id="email" class ="fn" onfocus="myFunction(2)" onblur="function1(2)"  oninput="changing(2)"  title="Enter your Email"></td><td><p style="color:red" class ="demo"></p></td>
+	</tr>
+	
+	<tr>
+		<td>Confirm Email:</td><td><input type="email" id="cemail" name="email" class ="fn" onfocus="myFunction(3)" onblur="function1(3)"   oninput="changing(3)"  title="Enter your Email again"></td><td><p style="color:red" class ="demo"></p></td>
+	</tr>
+	
+	<tr>
+		<td>Password:</td><td><input type="password" name="password" id="pwd" class ="fn" onfocus="myFunction(4)" onblur="function1(4)"  oninput="changing(4)"  title="Enter your Password"></td><td><p style="color:red" class ="demo"></p></td>
+	</tr>
+	<tr>
+		<td>Confirm Password:</td><td><input type="password" id="cpwd" name="password" class ="fn" onfocus="myFunction(5)" onblur="function1(5)"  oninput="changing(5)"  title="Enter your Password again"></td><td><p style="color:red" class ="demo"></p></td>
+	</tr><tr></tr>
+	</table>
+	</fieldset>
+	<br>
+<fieldset>
+
+<legend>Educational Information</legend><br>
+
+	Qualification:<select id="ql" onchange="drpdwn1()" required>
+		
+		<option value="ssc" id="X">10Th</option>
+		<option value="inter" id="XII">10+2Th</option>
+		<option value="gra" id="XIII" > Graduation</option>
+		<option value="pstgra" id="XIIII" >Post Graduation</option>
+	</select>
+	<select id="tenthtwel" onchange="drpdwn2()" required>
+		
+		<option value="cbse">CBSC</option>
+		<option value="icse">ICSE</option>
+		<option value="stateboard">STATEBOARD</option>
+		
+	</select>
+	<select id="graduation" onchange="drpdwn3()" required>
+		
+		<option value="btech">BTECH</option>
+		<option value="ba">BA</option>
+		<option value="bsc">BSC</option>
+ 		
+	</select>
+	<select id="Postgraduation" onchange="drpdwn4()" required>
+		
+		<option value="ma">MA</option>
+		<option value="mba">MBA</option>
+		<option value="msc">MSC</option>
+		
+	</select>
+	<select id="Stateboard" onchange="drpdwn5()" required>
+		
+		<option value="Ap">AP</option>
+		<option value="tg">TG</option>
+		<option value="tml">TML</option>
+		
+	</select>
+	<select id="branches" onchange="drpdwn6()" required>
+		
+		<option value="cse">CSE</option>
+		<option value="ece">ECE</option>
+		<option value="mech">MECH</option>
+		
+	</select>
+	</fieldset><br>
+<fieldset>
+<legend>Additional Information</legend><br>
+<form > 
+<input type="checkbox" name="Intrests[]" value="cyclining" onclick="checkf()">cyclining<br><br>
+<input type="checkbox" name="Intrests[]" value="cooking" onclick="checkf()">cooking<br><br>
+<input type="checkbox" name="Intrests[]" value="Reading books"  onclick="checkf()">Reading books<br><br>
+<input type="checkbox" name="Intrests[]" value="dancing" onclick="checkf()">dancing<br><br>
+</form>
+
+</fieldset><br>
+<div class="send">
+<input type="reset" value="Reset"  onclick="reset()" />
+<input type="submit" value="Submit" />
+</div>
+</form>
+</div>
+<script type="text/javascript">
+	function myFunction(index) {
+document.getElementsByClassName('fn')[index].style.backgroundColor="#DCDCDC";
+}
+	function function1(index)
+	{
+		document.getElementsByClassName('fn')[index].style.backgroundColor="white";
+		var textbox=document.getElementsByClassName('fn')[index].value;
+		var textlength=textbox.length;
+		if(textlength<=0)
+		{
+			document.getElementsByClassName("demo")[index].innerHTML="You can't leave this empty";
+			document.getElementsByClassName('fn')[index].style.borderColor="red";
+		}
+		// else if(textlength>0) {
+		// 	document.getElementsByClassName("demo")[index].innerHTML=" ";
+
+		// }
+
+		if(document.getElementsByClassName('fn')[index].getAttribute('id')==='cemail')
+		 {
+			var email=document.getElementById("email").value;
+			var cemail=document.getElementById("cemail").value;
+			if(email!=cemail)
+			{
+				alert("Emails r not matching");
+			}
+		}
+		
+
+
+	}
+	///getting values of check box
+	function checkf()
+
+	{
+
+		var boxes=document.getElementsByName("Intrests[]");
+		var validate=[];
+		
+		var len=boxes.length;
+		for (var i=0 ; i<len ; i++) 
+		{
+			if(boxes[i].checked==true)
+			{
+				//console.log(boxes[i].value);
+				validate.push(boxes[i].value);
+			}
+			
+		}
+		console.log(validate);
+		//console.log(boxes);
+
+		
+	}
+	//
+	function changing(index)
+	{
+			var textbox=document.getElementsByClassName('fn')[index].value;
+				var textlength=textbox.length;
+				if(textlength>0) {
+					document.getElementsByClassName("demo")[index].innerHTML="";
+					document.getElementsByClassName('fn')[index].style.borderColor="";
+			}
+		}
+
+function drpdwn1()
+{
+
+console.log(document.getElementById("ql").value);
+if(document.getElementById("ql").value==='ssc')
+	{	alert("dropdown X called...");
+
+	document.getElementById("tenthtwel").style.display="block";
+	document.getElementById("Postgraduation").style.display="none";
+	document.getElementById("graduation").style.display="none";
+	document.getElementById("Stateboard").style.display="none";
+	document.getElementById("branches").style.display="none";
+
+	}
+else if(document.getElementById("ql").value==='inter')
+	{alert("dropdown XII called...");
+
+		document.getElementById("tenthtwel").style.display="block";
+		document.getElementById("Postgraduation").style.display="none";
+		document.getElementById("graduation").style.display="none";
+		document.getElementById("Stateboard").style.display="none";
+		document.getElementById("branches").style.display="none";
+
+	}
+
+
+else if(document.getElementById("ql").value==='gra')
+	{
+	alert("dropdownXIII called...");
+	document.getElementById("graduation").style.display="block";
+	document.getElementById("Postgraduation").style.display="none";
+	document.getElementById("tenthtwel").style.display="none";
+	document.getElementById("Stateboard").style.display="none";
+	document.getElementById("branches").style.display="none";
+
+	}
+else if(document.getElementById("ql").value==="pstgra")
+		{
+			alert("dropdownXIIII called...");
+
+			document.getElementById("Postgraduation").style.display="block";
+			document.getElementById("tenthtwel").style.display="none";
+			document.getElementById("graduation").style.display="none";
+			document.getElementById("Stateboard").style.display="none";
+			document.getElementById("branches").style.display="none";
+		}
+
+}
+function drpdwn2()
+{
+
+	if(document.getElementById("tenthtwel").value==="stateboard")
+	{
+
+		document.getElementById("Stateboard").style.display="block";
+		document.getElementById("Postgraduation").style.display="none";
+		document.getElementById("tenthtwel").style.display="none";
+		document.getElementById("graduation").style.display="none";
+		document.getElementById("branches").style.display="none";
+	}
+}function drpdwn3()
+{
+
+	if(document.getElementById("graduation").value==="btech")
+	{
+
+		document.getElementById("branches").style.display="block";
+		document.getElementById("Postgraduation").style.display="none";
+		document.getElementById("tenthtwel").style.display="none";
+		document.getElementById("graduation").style.display="none";
+		document.getElementById("Stateboard").style.display="none";
+	}
+}
+	
+	
+	
+
+</script>
+</body>
+</html>
