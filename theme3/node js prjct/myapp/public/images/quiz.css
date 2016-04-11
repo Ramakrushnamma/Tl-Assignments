@@ -1,0 +1,38 @@
+body
+{
+	background-color:#FFF;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h3
+{
+    text-align:center;
+}
+
+.card
+{
+    position: relative;
+    box-shadow: 5px 5px 2px -1px #52616D;
+    border-radius: 2px;
+    background-color:#E5E1D1;
+    text-align: center;
+    width: 250px;
+    margin: 20px 0px 50px 0px;
+    padding: 0;
+}
+
+.pic {
+    position: relative;
+    margin: 0px auto;
+    padding: 20px;
+}
+
+.img-circle {
+    box-shadow: -2px 1px 1px 1px #2C343B;
+}
+
+.txt {
+    position: relative;
+    margin: 0px auto;
+    padding: 20px;
+}
